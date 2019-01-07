@@ -1,0 +1,66 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AVL_H	avl-trees/avl.h	2;"	d
+AVL_NODE	avl-trees/avl.h	/^} AVL_NODE;$/;"	t	typeref:struct:node
+BUF_LEN	avl-trees/common.h	18;"	d
+CC	avl-trees/Makefile	/^CC := gcc$/;"	m
+CFILES	avl-trees/Makefile	/^CFILES := $(wildcard *.c)$/;"	m
+CFLAGS	avl-trees/Makefile	/^CFLAGS := -g -Wall$/;"	m
+COMMON_H	avl-trees/common.h	2;"	d
+DATA	avl-trees/avl.h	/^typedef int DATA;$/;"	t
+DELETE_TREE	avl-trees/avl.h	44;"	d
+DEPFILES	avl-trees/Makefile	/^DEPFILES := $(CFILES:.c=.d)$/;"	m
+EPS	avl-trees/common.h	20;"	d
+ERROR	avl-trees/common.h	13;"	d
+ERR_MESG	avl-trees/common.h	31;"	d
+FAILURE	avl-trees/common.h	15;"	d
+HEIGHT	avl-trees/avl.h	36;"	d
+HFILES	avl-trees/Makefile	/^HFILES := $(wildcard *.h)$/;"	m
+INFTY	avl-trees/common.h	19;"	d
+INVALID	avl-trees/common.h	14;"	d
+LDFLAGS	avl-trees/Makefile	/^LDFLAGS :=$/;"	m
+MAX	avl-trees/common.h	23;"	d
+MAX_NODES	avl-trees/avl.h	6;"	d
+MIN	avl-trees/common.h	24;"	d
+Malloc	avl-trees/common.h	39;"	d
+OBJFILES	avl-trees/Makefile	/^OBJFILES := $(CFILES:.c=.o)$/;"	m
+PROG	avl-trees/Makefile	/^PROG := driver $/;"	m
+Realloc	avl-trees/common.h	40;"	d
+SQR	avl-trees/common.h	28;"	d
+TREE	avl-trees/avl.h	/^} TREE;$/;"	t	typeref:struct:__anon1
+UNDEF	avl-trees/common.h	16;"	d
+balance	avl-trees/avl-utils.c	/^void balance(TREE *tree, int *node) {$/;"	f
+data	avl-trees/avl.h	/^    DATA data;$/;"	m	struct:node
+delete	avl-trees/avl.c	/^int delete(TREE *tree, int parent, int *root, DATA d) {$/;"	f
+dprintf	avl-trees/common.h	34;"	d
+dprintf	avl-trees/common.h	36;"	d
+find_successor	avl-trees/avl-utils.c	/^int find_successor(TREE *tree, int node) {$/;"	f
+free_list	avl-trees/avl.h	/^    int root, free_list;$/;"	m	struct:__anon1
+free_up_node	avl-trees/avl-utils.c	/^void free_up_node(TREE *tree, int index) {$/;"	f
+get_new_node	avl-trees/avl-utils.c	/^int get_new_node(TREE *tree) {$/;"	f
+grow_tree	avl-trees/avl-utils.c	/^int grow_tree(TREE *tree) {$/;"	f
+height	avl-trees/avl.h	/^    int left, right, parent, height; \/\/ following Weiss, DS & AA in C++, 4ed.$/;"	m	struct:node
+init_tree	avl-trees/avl.c	/^int init_tree(TREE *tree) {$/;"	f
+inorder	avl-trees/avl-utils.c	/^void inorder(TREE *tree, int root) {$/;"	f
+insert	avl-trees/avl.c	/^int insert(TREE *tree, int parent, int *root, DATA d) {$/;"	f
+left	avl-trees/avl.h	/^    int left, right, parent, height; \/\/ following Weiss, DS & AA in C++, 4ed.$/;"	m	struct:node
+main	avl-trees/driver.c	/^int main(int ac, char *av[])$/;"	f
+matrix_alloc	avl-trees/common.h	43;"	d
+matrix_free	avl-trees/common.h	54;"	d
+max_nodes	avl-trees/avl.h	/^    unsigned int num_nodes, max_nodes;$/;"	m	struct:__anon1
+node	avl-trees/avl.h	/^typedef struct node {$/;"	s
+nodelist	avl-trees/avl.h	/^    AVL_NODE *nodelist;$/;"	m	struct:__anon1
+num_nodes	avl-trees/avl.h	/^    unsigned int num_nodes, max_nodes;$/;"	m	struct:__anon1
+parent	avl-trees/avl.h	/^    int left, right, parent, height; \/\/ following Weiss, DS & AA in C++, 4ed.$/;"	m	struct:node
+print_pstree	avl-trees/avl-utils.c	/^void print_pstree(TREE *tree, int root) {$/;"	f
+right	avl-trees/avl.h	/^    int left, right, parent, height; \/\/ following Weiss, DS & AA in C++, 4ed.$/;"	m	struct:node
+root	avl-trees/avl.h	/^    int root, free_list;$/;"	m	struct:__anon1
+rotate_on_insert_LL	avl-trees/avl-utils.c	/^void rotate_on_insert_LL(TREE *tree, int parent, int *node) {$/;"	f
+rotate_on_insert_LR	avl-trees/avl-utils.c	/^void rotate_on_insert_LR(TREE *tree, int parent, int *node) {$/;"	f
+rotate_on_insert_RL	avl-trees/avl-utils.c	/^void rotate_on_insert_RL(TREE *tree, int parent, int *node) {$/;"	f
+rotate_on_insert_RR	avl-trees/avl-utils.c	/^void rotate_on_insert_RR(TREE *tree, int parent, int *node) {$/;"	f
+search	avl-trees/avl.c	/^int search(TREE *tree, int root, DATA d) {$/;"	f

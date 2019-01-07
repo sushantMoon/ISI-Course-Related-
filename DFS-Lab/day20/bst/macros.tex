@@ -1,0 +1,325 @@
+% Following workaround required in order to get auctex to parse this file
+% and update auto/macros.el properly.
+\iffalse
+\documentclass{article}
+\begin{document}
+\fi
+
+\usepackage{etex}
+\usepackage{etoolbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{catchfilebetweentags}
+\usepackage[mathscr]{euscript}
+\usepackage[bottom,hang,flushmargin]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{pdfpages}
+\usepackage{pstricks,pst-node}
+\usepackage{soul}
+\usepackage{verbatim}
+
+%-- ENUMERATE --------------------------------------------------------------
+%\usepackage{enumerate} % to change label style
+
+%\usepackage[newenum,olditem]{paralist}  % to change label style, and for \begin{inparaenum}[]
+
+\makeatletter
+\@ifclassloaded{beamer}{%
+  %\usepackage{hyperref}
+  \usepackage{multimedia}
+  \input{mytikz.tex}
+
+  %\hypersetup{colorlinks=true,linkcolor=white,urlcolor=blue}
+
+  % http://tex.stackexchange.com/questions/57441/how-to-include-existing-pdf-slides-into-my-beamer
+  \newcommand*{\loadpresentation}[1]{{\beamer@inlecturefalse\input{#1}}}
+
+  % http://tex.stackexchange.com/questions/87249/adjust-vertical-space-before-enumerated-list-in-beamer
+  \newcommand{\setlistspacing}[3]{%
+    \def\@ld{#1}
+    \expandafter
+    \def\csname @list\romannumeral\@ld \endcsname
+    {\leftmargin\csname leftmargin\romannumeral\@ld \endcsname
+      \topsep    #2
+      \parsep    0\p@   \@plus\p@
+      \itemsep   #3
+    }%
+  }
+  %
+  \newcommand{\anchorpoint}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+  %
+  \newcommand*{\golla}[4][red]{% [color]{location}{width}{height}
+    \begin{tikzpicture}[overlay,remember picture,thick]
+      \node () at #2 [shape=ellipse,draw=#1,text height=#4] {~\hspace{#3}~} ;
+    \end{tikzpicture}
+  }
+  %
+  \newcommand*{\namedgolla}[5][red]{% [color]{location}{width}{height}{nodename}
+    \begin{tikzpicture}[overlay,remember picture,thick]
+      \node (#5) at #2 [shape=ellipse,draw=#1,text height=#4] {~\hspace{#3}~} ;
+    \end{tikzpicture}
+  }
+  %
+  \newcommand*{\floatingnote}[5][1-]{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \pgftransformshift{\pgfpointanchor{current page}{center}}
+      \path<#1> #2
+      node[rectangle,rounded corners=4pt,fill=#4,opacity=.5]
+      {\parbox{#3}{\raggedright #5}};
+    \end{tikzpicture}
+  }
+  %
+  \newcommand*{\popupnote}[4][1-]{% [overlay spec]{anchor}{(x,y)}{text}
+    \begin{tikzpicture}[remember picture,overlay]
+      \pgftransformshift{\pgfpointanchor{current page}{north west}}
+      \path<#1> (#2) ++#3
+      node[anchor=west,rectangle callout,rounded
+      corners=4pt,fill=black!30,opacity=.5,callout absolute  pointer={(#2)}] {#4};
+    \end{tikzpicture}
+  }
+  %
+  \newcommand{\reference}[1] {%
+    \begin{tikzpicture}[remember picture,overlay]
+      \pgftransformshift{\pgfpointanchor{current page}{north}}
+      \draw (0,-1) node[anchor=north] {\fbox{\smaller{Reference: #1}}};
+    \end{tikzpicture}
+  }
+  %
+  \newcommand*{\titleslide}[1] {%
+    \begin{frame}{} \cl{\Large \textit{\textbf{#1}}} \end{frame}
+    %\begin{frame}[plain]{} \cl{\Large \textit{{#1}}} \end{frame}}
+  }
+}{%
+  \usepackage[inline,shortlabels]{enumitem}% /home/mandar/latex/enumitem.pdf
+  \usepackage{url}
+}
+\makeatother
+%  \b...{enumerate}[topsep=,partopsep=,parsep=,itemsep=] changes vert. sp.
+%  \b...{enumerate*} produces inline environment
+%  \b...{enumerate}[i)] changes label style (see package option shortlabels)
+%---------------------------------------------------------------------------
+
+%-- COLOURS ----------------------------------------------------------------
+\providecommand{\amber}{}
+\providecommand{\blue}{}
+\providecommand{\brown}{}
+\providecommand{\green}{}
+\providecommand{\grey}{}
+\providecommand{\red}{}
+\providecommand{\white}{}
+
+\renewcommand{\amber}[1] {\textcolor[rgb]{1.00,0.50,0.00}{#1}}
+\renewcommand{\blue}[1] {\textcolor{blue}{#1}}
+\renewcommand{\brown}[1] {\textcolor{brown}{#1}}
+\renewcommand{\green}[1] {\textcolor[rgb]{0,0.7,0}{#1}}
+\renewcommand{\grey}[1] {\textcolor{gray}{#1}}
+\renewcommand{\red}[1] {\textcolor{red}{#1}}
+\renewcommand{\white}[1] {\textcolor{white}{#1}}
+
+
+%-- TABULARS ---------------------------------------------------------------
+% tabularx:
+% - total width of table has to be specified and is fixed
+% - all columns of equal width; relatively hard to change column widths
+% = C, L, R column types have to be defined
+% + relatively easy to change vertical alignment globally (cf. cheatsheet)
+% \usepackage{tabularx}
+% \newcolumntype{C}{>{\centering\arraybackslash}X}
+% \newcolumntype{L}{>{\raggedright\arraybackslash}X}
+% \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+% tabulary:
+% + total width of table is indicative and a maximum
+% + relatively better column width allocation
+% = C, L, R column types pre-defined
+% - vertical alignment has to be changed per cell using \parbox (cf. cheatsheet)
+% \usepackage{tabulary}
+
+% ctable (includes array, booktabs and tabularx):
+% + combines advantages of tabularx, tabulary
+\makeatletter
+\@ifundefined{htlatex}{%
+  \usepackage{ctable}
+  \setupctable{%
+    botcap, % topcap or sidecap
+    captionskip=2pt, % space between caption and table
+    mincapwidth=2in, % minimum width of caption
+  }
+  % Useful for colouring table columns in the presence of midrules
+  % http://tex.stackexchange.com/questions/11198/coloring-columns-in-a-table-with-colortbl-and-booktabs
+  \setlength{\aboverulesep}{0pt} % remove space above rules
+  \setlength{\belowrulesep}{0pt} % remove space below rules
+  \setlength{\extrarowheight}{.75ex} % add back space in body of the row
+}
+\makeatother
+
+% tabu:
+\usepackage[delarray]{tabu}
+
+\usepackage{colortbl}
+
+%---------------------------------------------------------------------------
+
+%-- LISTINGS ---------------------------------------------------------------%
+\lstset{basicstyle=\ttfamily,
+  breaklines=true,        
+  breakatwhitespace=true,
+  columns=fullflexible,
+  keepspaces=true,
+  numbers=left,
+  numbersep=12pt,
+  numberstyle=\tiny,
+  showstringspaces=false,
+  xleftmargin=1cm,
+  keywordstyle=\color{blue}\ttfamily,%\color[rgb]{0.1,0.2,0.9}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color[rgb]{0,0.7,0}\ttfamily,
+  morecomment=[l][\color{brown}]{\#}}
+%---------------------------------------------------------------------------%
+
+\newcommand{\bskip} {\bigskip}
+\newcommand{\hugeskip} {\bigskip \bigskip}
+\renewcommand{\mskip} {\medskip}
+\newcommand{\sskip} {\smallskip}
+\newcommand{\parab}[1] {\bigskip \noindent \textbf{#1}~}
+\newcommand{\param}[1] {\medskip \noindent \textbf{#1}~}
+\newcommand{\paras}[1] {\smallskip \noindent \textbf{#1}~}
+
+\newcommand{\doublespacing} {\linespread{1.6}\selectfont}
+\newcommand{\onehalfspacing} {\linespread{1.3}\selectfont}
+\newcommand{\singlespacing} {\linespread{1.0}\selectfont}
+\newcommand{\setspacing}[1] {\linespread{#1}\selectfont}
+\def\spacing {\setspacing}
+
+\newlength{\parindentincr}
+\newcommand{\addindent} {\addtolength{\parindent}{5mm}}
+\newcommand{\indentby}[1] {
+  \settowidth{\parindentincr}{#1}
+  \addtolength{\parindent}{\parindentincr}}
+\newcommand{\deindent} {\addtolength{\parindent}{-5mm}}
+\newcommand{\deindentby}[1] {
+  \settowidth{\parindentincr}{#1}
+  \addtolength{\parindent}{-\parindentincr}}
+
+\newcommand{\blank}[1] {\rule{#1}{0.5pt}}
+\newcommand{\blanklines}[1] {%
+  \newcounter{linei}
+  \setcounter{linei}{0}
+  \whileboolexpr%
+    {test{\ifnumcomp{\value{linei}}{<}{#1}}}
+    {\vspace{8mm}\hrulefill\par \addtocounter{linei}{1}}
+  }
+\newcommand{\cl} {\centerline}
+\newcommand{\command}[1] {\textcolor{brown}{\texttt{#1}}}
+\newcommand{\dash} {\blank}
+\renewcommand{\extrarowsep}[1] {\tabulinesep=#1}
+\newcommand{\half} {\ensuremath{\frac{1}{2}}}
+\newcommand{\highlight}[2] {\noindent\colorbox{#1}{ % 1st argument = colour
+    \parbox{\dimexpr\linewidth-2\fboxsep}{#2}}} % 2nd argument = text
+\newcommand{\important}[1] {\centerline{\framebox{\textcolor{red}{#1}}}}
+\newcommand{\intersection} {\cap}
+\newcommand{\latex} {\LaTeX\ }
+\newcommand{\lb} {\linebreak}
+\renewcommand{\marks}[1] {\hspace*{\fill}{[#1]}}
+\newcommand{\mc} {\multicolumn}
+\newcommand{\mybox}[1] {\centerline{\framebox{#1}}}
+\newcommand{\myorigin} {\qdisk(0,0){0.1}}
+\newcommand{\mysignature} {\includegraphics[scale=0.2]{signature}}
+\newcommand{\mystrut}[1] {\rule[- #1 * \real{0.3}]{0pt}{#1}}
+\newcommand{\otoprule} {\midrule[\heavyrulewidth]}
+\newcommand{\overbar} {\overline}
+\newcommand{\partialinput}[2] {\ExecuteMetaData[#2]{#1}}
+\newcommand{\pic} {\includegraphics}
+\newcommand{\pipe} {~\ensuremath{\mid}~}
+\newcommand{\pto} {\vfill\hspace*{\fill}\textsc{p.t.o.} \newpage}
+\newcommand{\ra} {\ensuremath{\rightarrow}}
+\newcommand{\Ra} {\ensuremath{\Rightarrow}}
+\newcommand{\sbcb} {\;\!} % space before close brace
+\newcommand{\tb} {\textbackslash}
+\newcommand{\torf} {\hfill \textsc{true / false}}
+\newcommand{\ttilde} {\textasciitilde}
+\ifdefined\ul
+  \renewcommand{\ul}[1] {\underline{#1}}
+\else
+  \newcommand{\ul}[1] {\underline{#1}}
+\fi
+\newcommand{\undertilde}[1] {\mbox{\Large \raisebox{-5mm}{$\displaystyle\stackrel{#1}{\text{\textasciitilde}}$}}}
+\newcommand{\union} {\cup}
+\newcommand{\xor} {\ensuremath{\oplus}}
+
+\newfont{\helvetica}{phvr8t at 10pt}
+\newfont{\helveticasmall}{phvr8t at 9pt}
+\newfont{\helveticabig}{phvr8t at 22pt}
+\newfont{\helveticao}{phvro8t at 11pt}
+
+% These commands seem to change fontsize only, but not the spacing between
+% lines (at least on prosper slides). 
+% To change both, use:
+% \fontsize{x}{y}\selectfont
+% Documentation: 
+% \fontsize{size}{skip}
+%     Set font size. The first parameter is the font size to switch to;
+%     the second is the `\baselineskip' to use. The unit of both
+%     parameters defaults to pt. A rule of thumb is that the
+%     baselineskip should be 1.2 times the font size.
+\newcommand{\smaller}{\footnotesize}
+\newcommand{\smallest}{\scriptsize}
+\newcommand{\smallsc}[1] {{\footnotesize\textsc{#1}}}
+\newcommand{\setfontsizeandspacing}[2] {\fontsize{#1}{#2}\selectfont}
+
+% http://www.physics.wm.edu/~norman/latexhints/conditional_macros.html
+\ifdefined\labelenumiii
+  \renewcommand{\labelenumiii}{(\roman{enumiii})}
+\else
+  \newcommand{\labelenumiii}{(\roman{enumiii})}
+\fi
+
+%\renewcommand{\baselinestretch}{1.5}
+%\renewcommand{\labelenumiv}{(\arabic{enumiv})}
+
+%---------------------------------------------------------------------------%
+% http://tex.stackexchange.com/questions/4889/input-only-part-of-a-file
+% \partialinput{from-line}{to-line}{filename}
+\makeatletter
+\newread\pin@file
+\newcounter{pinlineno}
+\newcommand\pin@accu{}
+\newcommand\pin@ext{pintmp}
+% inputs #3, selecting only lines #1 to #2 (inclusive)
+\newcommand*\dummypartialinput [3] {%
+  \IfFileExists{#3}{%
+    \openin\pin@file #3
+    % skip lines 1 to #1 (exclusive)
+    \setcounter{pinlineno}{1}
+    \@whilenum\value{pinlineno}<#1 \do{%
+      \read\pin@file to\pin@line
+      \stepcounter{pinlineno}%
+    }
+    % prepare reading lines #1 to #2 inclusive
+    \addtocounter{pinlineno}{-1}
+    \let\pin@accu\empty
+    \begingroup
+    \endlinechar\newlinechar
+    \@whilenum\value{pinlineno}<#2 \do{%
+      % use safe catcodes provided by e-TeX's \readline
+      \readline\pin@file to\pin@line
+      \edef\pin@accu{\pin@accu\pin@line}%
+      \stepcounter{pinlineno}%
+    }
+    \closein\pin@file
+    \expandafter\endgroup
+    \scantokens\expandafter{\pin@accu}%
+  }{%
+    \errmessage{File `#3' doesn't exist!}%
+  }%
+}
+\makeatother
+%---------------------------------------------------------------------------%
+
+\iffalse
+\end{document}
+\fi

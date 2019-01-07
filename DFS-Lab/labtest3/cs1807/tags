@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CALLOC	heap.h	68;"	d
+Heap	heap.h	/^typedef struct Heap{$/;"	s
+Heap	heap.h	/^} Heap;$/;"	t	typeref:struct:Heap
+INTMIN	cs1807-test3-prog1.c	15;"	d	file:
+MALLOC	heap.h	67;"	d
+MAX	heap.h	74;"	d
+MIN	heap.h	73;"	d
+_GHEAP_	heap.h	12;"	d
+_G_COMMON_H_	heap.h	2;"	d
+_G_COMPARISION_H_	heap.h	72;"	d
+_G_MEMORY_ALLOCATION_H_	heap.h	66;"	d
+_INIT_MAX_ELEMENTS_HEAP_	heap.h	14;"	d
+comparator	heap.h	/^    int (*comparator)(void*, size_t, size_t);$/;"	m	struct:Heap
+element_size	heap.h	/^    size_t element_size;$/;"	m	struct:Heap
+elements	heap.h	/^    void *elements;$/;"	m	struct:Heap
+extractMin	heap.c	/^void extractMin(Heap *h, void *outputptr){$/;"	f
+freeHeap	heap.c	/^void freeHeap(Heap *h){$/;"	f
+growHeap	heap.c	/^void growHeap(Heap *h){$/;"	f
+leftChild	heap.c	/^size_t leftChild(Heap *h, size_t position){$/;"	f
+main	cs1807-test3-prog1.c	/^int main(int argc, char const *argv[])$/;"	f
+max_elements	heap.h	/^    size_t max_elements;$/;"	m	struct:Heap
+minHeapInsert	heap.c	/^void minHeapInsert(Heap *h, const void *inputptr){$/;"	f
+minHeapPullUp	heap.c	/^void minHeapPullUp(Heap *h, size_t position){$/;"	f
+minHeapPushDown	heap.c	/^void minHeapPushDown(Heap *h, size_t position){$/;"	f
+newHeap	heap.c	/^Heap *newHeap(size_t element_size, int (*comparator)(void*, size_t, size_t)){$/;"	f
+num_elements	heap.h	/^    size_t num_elements;$/;"	m	struct:Heap
+parent	heap.c	/^size_t parent(Heap *h, size_t position){$/;"	f
+reduceHeap	heap.c	/^void reduceHeap(Heap *h){$/;"	f
+rightChild	heap.c	/^size_t rightChild(Heap *h, size_t position){$/;"	f
+swap	heap.c	/^void swap(Heap *h, size_t i, size_t j){$/;"	f

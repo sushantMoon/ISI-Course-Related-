@@ -1,0 +1,73 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALPHABET_SIZE	trie.h	4;"	d
+Bloom_Filter	bloom.h	/^typedef struct Bloom_Filter{$/;"	s
+Bloom_Filter	bloom.h	/^}Bloom_Filter;$/;"	t	typeref:struct:Bloom_Filter
+Bloom_Hash_Function	bloom.h	/^typedef struct Bloom_Hash_Function{$/;"	s
+Bloom_Hash_Function	bloom.h	/^}Bloom_Hash_Function;$/;"	t	typeref:struct:Bloom_Hash_Function
+CALLOC	common.h	15;"	d
+CALLOC	cs1807-assign4-prog1-zx.c	22;"	d	file:
+CALLOC	cs1807-assign4-prog2-zxx.c	21;"	d	file:
+CHAR_TO_KEY	trie.c	/^int CHAR_TO_KEY(char c){$/;"	f
+MALLOC	common.h	14;"	d
+MALLOC	cs1807-assign4-prog1-zx.c	21;"	d	file:
+MALLOC	cs1807-assign4-prog2-zxx.c	20;"	d	file:
+MAX	common.h	22;"	d
+MAX	cs1807-assign4-prog1-zx.c	25;"	d	file:
+MAX	cs1807-assign4-prog2-zxx.c	24;"	d	file:
+MAX_LENGTH	cs1807-assign4-prog1-zx.c	26;"	d	file:
+MAX_LENGTH	cs1807-assign4-prog2-zxx.c	25;"	d	file:
+MIN	common.h	21;"	d
+MIN	cs1807-assign4-prog1-zx.c	24;"	d	file:
+MIN	cs1807-assign4-prog2-zxx.c	23;"	d	file:
+REALLOC	common.h	16;"	d
+REALLOC	cs1807-assign4-prog1-zx.c	23;"	d	file:
+REALLOC	cs1807-assign4-prog2-zxx.c	22;"	d	file:
+Stack	stack.h	/^} Stack;$/;"	t	typeref:struct:__anon1
+TrieNode	trie.h	/^typedef struct TrieNode{$/;"	s
+TrieNode	trie.h	/^}TrieNode;$/;"	t	typeref:struct:TrieNode
+_BLOOM_FILTER_SIZE_	bloom.h	4;"	d
+_GSTACK_	stack.h	2;"	d
+_G_COMMON_H_	common.h	2;"	d
+_G_COMPARISION_H_	common.h	20;"	d
+_G_MEMORY_ALLOCATION_H_	common.h	13;"	d
+_INIT_MAX_ELEMENTS_STACK_	stack.h	6;"	d
+__G_BLOOM_FILTER__	bloom.h	2;"	d
+__G_TRIE__	trie.h	2;"	d
+add_hash_bloom_filter	bloom.c	/^void add_hash_bloom_filter(Bloom_Filter_Hash *bloom_filter_hash, unsigned int *new_hash_function){$/;"	f
+bloom_filter_size	bloom.h	/^    unsigned int bloom_filter_size;$/;"	m	struct:Bloom_Filter
+count	trie.h	/^    int  count;$/;"	m	struct:TrieNode
+element_size	stack.h	/^    size_t element_size;$/;"	m	struct:__anon1
+elements	stack.h	/^    void *elements;$/;"	m	struct:__anon1
+elements	trie.h	/^    struct TrieNode *(elements[ALPHABET_SIZE]);$/;"	m	struct:TrieNode	typeref:struct:TrieNode::TrieNode
+end_flag	trie.h	/^    int end_flag;$/;"	m	struct:TrieNode
+freeElements	stack.h	/^    void (*freeElements) (void *);      $/;"	m	struct:__anon1
+freeStack	stack.c	/^void freeStack(Stack **s){$/;"	f
+freeTrie	trie.c	/^void freeTrie(TrieNode *trie){$/;"	f
+hash_function	bloom.h	/^    unsigned int *hash_function;$/;"	m	struct:Bloom_Hash_Function
+hash_head	bloom.h	/^    Bloom_Hash_Function *hash_head;$/;"	m	struct:Bloom_Filter
+hash_space	bloom.h	/^    void *hash_space;$/;"	m	struct:Bloom_Filter
+initStack	stack.c	/^void initStack (Stack *s, size_t element_size){$/;"	f
+initTrieNode	trie.c	/^TrieNode *initTrieNode(){$/;"	f
+init_bloom_filter	bloom.c	/^Bloom_Filter *init_bloom_filter(Bloom_Filter_Hash *bloom_filter_hash){$/;"	f
+init_hash_bloom_filter	bloom.c	/^Bloom_Hash_Function *init_hash_bloom_filter(unsigned int *hash_function){$/;"	f
+insertTrie	trie.c	/^void insertTrie(TrieNode *trie, char *s){$/;"	f
+isEmpty	stack.c	/^int isEmpty(const Stack *s){$/;"	f
+main	cs1807-assign4-prog1-zx.c	/^int main(int argc, char const *argv[])$/;"	f
+main	cs1807-assign4-prog2-zxx.c	/^int main(int argc, char const *argv[])$/;"	f
+max_elements	stack.h	/^    size_t max_elements;$/;"	m	struct:__anon1
+newStack	stack.c	/^Stack *newStack(size_t element_size){$/;"	f
+newTrie	trie.c	/^TrieNode *newTrie(){$/;"	f
+next	bloom.h	/^    struct Bloom_Hash_Function *next;   $/;"	m	struct:Bloom_Hash_Function	typeref:struct:Bloom_Hash_Function::Bloom_Hash_Function
+num_elements	stack.h	/^    size_t num_elements;$/;"	m	struct:__anon1
+pop	stack.c	/^void pop(Stack *s, void *eptr){$/;"	f
+push	stack.c	/^void push(Stack *s, const void *eptr){$/;"	f
+read_from_file_to_char_array	cs1807-assign4-prog2-zxx.c	/^size_t read_from_file_to_char_array(const char *file_name, char** buffer){$/;"	f
+searchTrie	trie.c	/^TrieNode *searchTrie(TrieNode *trie, char *s){$/;"	f
+stackGrow	stack.c	/^void stackGrow(Stack *s){$/;"	f
+stackReduce	stack.c	/^void stackReduce(Stack *s){$/;"	f
+top	stack.c	/^void top(Stack *s, void *eptr){$/;"	f

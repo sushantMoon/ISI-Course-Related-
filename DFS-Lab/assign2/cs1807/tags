@@ -1,0 +1,54 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CALLOC	heap.h	55;"	d
+CALLOC	sequence.h	46;"	d
+Heap	heap.h	/^typedef struct Heap{$/;"	s
+Heap	heap.h	/^} Heap;$/;"	t	typeref:struct:Heap
+MALLOC	heap.h	54;"	d
+MALLOC	sequence.h	45;"	d
+MAX	heap.h	61;"	d
+MAX	sequence.h	52;"	d
+MAX_STRING_SIZE	cs1807-assign2-prog1.c	27;"	d	file:
+MIN	heap.h	60;"	d
+MIN	sequence.h	51;"	d
+Sequence	sequence.h	/^} Sequence;$/;"	t	typeref:struct:sequence
+_GHEAP_	heap.h	11;"	d
+_GSEQUENCE_	sequence.h	13;"	d
+_G_COMMON_H_	heap.h	2;"	d
+_G_COMMON_H_	sequence.h	2;"	d
+_G_COMPARISION_H_	heap.h	59;"	d
+_G_COMPARISION_H_	sequence.h	50;"	d
+_G_MEMORY_ALLOCATION_H_	heap.h	53;"	d
+_G_MEMORY_ALLOCATION_H_	sequence.h	44;"	d
+_INIT_MAX_ELEMENTS_SEQUENCE_	heap.h	13;"	d
+_INIT_MAX_ELEMENTS_SEQUENCE_	sequence.h	15;"	d
+asciiSum	sequence.c	/^int asciiSum(char *str){$/;"	f
+element_size	heap.h	/^    size_t element_size;$/;"	m	struct:Heap
+element_type	sequence.h	/^    char element_type;$/;"	m	struct:sequence
+elements	heap.h	/^    void *elements;$/;"	m	struct:Heap
+elements	sequence.h	/^    void *elements;$/;"	m	struct:sequence
+freeSequence	sequence.c	/^void freeSequence(Sequence *s){$/;"	f
+get_element	sequence.c	/^void get_element(Sequence s, size_t position){$/;"	f
+growSequence	sequence.c	/^void growSequence(Sequence *s){$/;"	f
+initSequence	sequence.c	/^void initSequence(Sequence *s, char element_type){$/;"	f
+leftChild	heap.c	/^size_t leftChild(Heap *h, size_t position){$/;"	f
+length	sequence.c	/^size_t length(Sequence s){$/;"	f
+main	cs1807-assign2-prog1.c	/^int main(){$/;"	f
+max_elements	sequence.h	/^    size_t max_elements;$/;"	m	struct:sequence
+newHeap	heap.c	/^Heap *newHeap(size_t element_size){$/;"	f
+newSequence	sequence.c	/^Sequence *newSequence(char element_type){$/;"	f
+num_elements	heap.h	/^    size_t num_elements;$/;"	m	struct:Heap
+num_elements	sequence.h	/^    size_t num_elements;$/;"	m	struct:sequence
+parent	heap.c	/^size_t parent(Heap *h, size_t position){$/;"	f
+pop	sequence.c	/^void pop(Sequence *s, void *eptr){$/;"	f
+push	sequence.c	/^void push(Sequence *s, const void *eptr){$/;"	f
+reduceSequence	sequence.c	/^void reduceSequence(Sequence *s){$/;"	f
+rightChild	heap.c	/^size_t rightChild(Heap *h, size_t position){$/;"	f
+sequence	sequence.h	/^typedef struct sequence{$/;"	s
+summation	sequence.c	/^void summation(Sequence s){$/;"	f
+summation_copy	sequence.c	/^int summation_copy(Sequence s){$/;"	f
+swap	heap.c	/^void swap(Heap *h, size_t i, size_t j){$/;"	f

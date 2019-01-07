@@ -1,0 +1,10 @@
+ram math 80000
+shyam eng 20000
+harish ben 50000
+akash geo 40000
+rahul hist 10000
+avik phy 73000
+tanay chem 60000
+bikas bio 30000
+bimal eco 90000
+spandan stat 85000
