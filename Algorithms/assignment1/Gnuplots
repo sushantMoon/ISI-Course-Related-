@@ -1,0 +1,83 @@
+# Prob_2a
+
+set grid
+set autoscale
+set title 'Merge Sort'
+set xlabel 'Number of Elements'
+set ylabel 'Time'
+plot 'prob_2a.dat' using 1:2 with linespoints title 'Recursive Merge Sort', 'prob_2a.dat' using 1:4 with linespoints title 'Iterative Merge Sort'
+
+set grid
+set autoscale
+set title 'Merge Sort'
+set xlabel 'Number of Elements'
+set ylabel 'Comparisions'
+plot 'prob_2a.dat' using 1:3 with linespoints title 'Recursive Merge Sort', 'prob_2a.dat' using 1:5 with linespoints title 'Iterative Merge Sort'
+
+
+# Prob_2b
+
+set grid
+set autoscale
+set title 'Heap Sort'
+set xlabel 'Number of Elements'
+set ylabel 'Time'
+plot 'prob_2b.dat' using 1:2 with linespoints title 'Recursive Heap Sort', 'prob_2b.dat' using 1:4 with linespoints title 'Iterative Heap Sort'
+
+set grid
+set autoscale
+set title 'Heap Sort'
+set xlabel 'Number of Elements'
+set ylabel 'Comparisions'
+plot 'prob_2b.dat' using 1:3 with linespoints title 'Recursive Heap Sort', 'prob_2b.dat' using 1:5 with linespoints title 'Iterative Heap Sort'
+
+
+# Prob_2c
+
+set grid
+set autoscale
+set title 'Quick Sort'
+set xlabel 'Number of Elements'
+set ylabel 'Time'
+plot 'prob_2c.dat' using 1:2 with linespoints title 'Recursive Quick Sort', 'prob_2c.dat' using 1:4 with linespoints title 'Iterative Quick Sort'
+
+set grid
+set autoscale
+set title 'Quick Sort'
+set xlabel 'Number of Elements'
+set ylabel 'Comparisions'
+plot 'prob_2c.dat' using 1:3 with linespoints title 'Recursive Quick Sort', 'prob_2c.dat' using 1:5 with linespoints title 'Iterative Quick Sort'
+
+# Prob_3a
+
+set grid
+set autoscale
+set title 'Recursive Implementations'
+set xlabel 'Number of Elements'
+set ylabel 'Time'
+plot 'prob_3a.dat' using 1:2 with linespoints title 'Quick Sort', 'prob_3a.dat' using 1:4 with linespoints title 'Merge Sort', 'prob_3a.dat' using 1:6 with linespoints title 'Heap Sort'
+
+
+set grid
+set autoscale
+set title 'Recursive Implementations'
+set xlabel 'Number of Elements'
+set ylabel 'Comparisions'
+plot 'prob_3a.dat' using 1:3 with linespoints title 'Quick Sort', 'prob_3a.dat' using 1:5 with linespoints title 'Merge Sort', 'prob_3a.dat' using 1:7 with linespoints title 'Heap Sort'
+
+# Prob_3b
+
+set grid
+set autoscale
+set title 'Iterative Implementations'
+set xlabel 'Number of Elements'
+set ylabel 'Time'
+plot 'prob_3b.dat' using 1:2 with linespoints title 'Quick Sort', 'prob_3b.dat' using 1:4 with linespoints title 'Merge Sort', 'prob_3b.dat' using 1:6 with linespoints title 'Heap Sort'
+
+
+set grid
+set autoscale
+set title 'Iterative Implementations'
+set xlabel 'Number of Elements'
+set ylabel 'Comparisions'
+plot 'prob_3b.dat' using 1:3 with linespoints title 'Quick Sort', 'prob_3b.dat' using 1:5 with linespoints title 'Merge Sort', 'prob_3b.dat' using 1:7 with linespoints title 'Heap Sort'
